@@ -103,6 +103,15 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
  - Update data for trailer video
  - Embeded the Youtbe video and make it autoplay and mute
  - Tailwind Classes to make Main Conatiner look awesome
+ - Build Secondary Component
+ - Build movie list
+ - Build Movie Card
+ - TMDB IMG CDN URL
+ - Made thr Browse page amazing with tailwind css
+ - usePopularMovies Custom hook
+ - useTopRatedMovies Custom hook
+ - useUpcomingMovies Custom hook
+
 
 
  # Features
