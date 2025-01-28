@@ -111,6 +111,9 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
  - usePopularMovies Custom hook
  - useTopRatedMovies Custom hook
  - useUpcomingMovies Custom hook
+ - GPT search page
+ - GPT Search bar
+ - Multi-language Feature in our App
 
 
 
