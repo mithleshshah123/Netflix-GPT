@@ -60,6 +60,8 @@ const Login = () => {
         .catch((error) => {
           const errorCode = error.code;
           const errorMessage = error.message;
+          
+          setErrorMessage(errorCode + "-" + errorMessage);
           // ..
         });
     } else {
@@ -77,6 +79,8 @@ const Login = () => {
           const errorCode = error.code;
           const errorMessage = error.message;
           // navigate("/");
+
+          setErrorMessage(errorCode + "-" + errorMessage);
         });
     }
   };

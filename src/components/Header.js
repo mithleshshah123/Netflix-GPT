@@ -4,15 +4,17 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { addUser, removeUser } from "../utils/userSlice";
-import { LOGO, SUPPORTED_LANGUAGE } from "../utils/constants";
-import { toggleGPTSearchView } from "../utils/gptSlice";
+import { LOGO, SUPPORTED_LANGUAGES } from "../utils/constants";
 import { changeLanguage } from "../utils/configSlice";
+import { toggleGeminiSearchView } from "../utils/geminiSlice";
 
 const Header = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const user = useSelector((store) => store.user);
-  const showGPTSearch = useSelector((store) => store.gpt.showGPTSearch);
+  const showGeminiSearch = useSelector(
+    (store) => store.gemini.showGeminiSearch
+  );
 
   const handleSignOut = () => {
     signOut(auth)
@@ -44,11 +46,11 @@ const Header = () => {
     return () => unsubscribe();
   }, []);
 
-  const handleGPTSearchClick = () => {
-    dispatch(toggleGPTSearchView());
+  const handleGeminiSearchClick = () => {
+    dispatch(toggleGeminiSearchView());
   };
 
-  const handleChangeLanguage = (e) => {
+  const handleLanguageChange = (e) => {
     dispatch(changeLanguage(e.target.value));
   };
 
@@ -57,12 +59,12 @@ const Header = () => {
       <img className="w-44" src={LOGO} alt="logo" />
       {user && (
         <div className="flex p-4">
-          {showGPTSearch && (
+          {showGeminiSearch && (
             <select
-              className="p-2 bg-gray-900 text-white m-2"
-              onChange={handleChangeLanguage}
+              className="p-2 m-2 bg-gray-900 text-white"
+              onChange={handleLanguageChange}
             >
-              {SUPPORTED_LANGUAGE.map((lang) => (
+              {SUPPORTED_LANGUAGES.map((lang) => (
                 <option key={lang.identifier} value={lang.identifier}>
                   {lang.name}
                 </option>
@@ -71,9 +73,9 @@ const Header = () => {
           )}
           <button
             className="py-2 px-4 mx-4 my-2 bg-purple-800 text-white rounded-lg"
-            onClick={handleGPTSearchClick}
+            onClick={handleGeminiSearchClick}
           >
-            {showGPTSearch ? "Homepage" : "GPT Search"}
+            {showGeminiSearch ? "Homepage" : "Gemini Search"}
           </button>
           <img className="w-12 h-12" alt="usericon" src={user?.photoURL} />
           <button onClick={handleSignOut} className="font-bold text-white p-1">
