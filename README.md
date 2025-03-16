@@ -114,6 +114,15 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
  - GPT search page
  - GPT Search bar
  - Multi-language Feature in our App
+ - Get Gemini Search Api key
+ - Gemini Search api call
+ - Fetched Gemini movie suggestions from tmdb
+ - Gemini Slice added data
+ - Reuse movielist componets to make movie suggestion container
+ - Memoization
+ - Added .env file
+ - Adding .env file to gitignore
+ - Made our site responsive
 
 
 
